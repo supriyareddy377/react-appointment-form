@@ -19,7 +19,9 @@ mongoose.connect("mongodb+srv://supriyareddy377_db_user:SupriyaReddy@cluster0.ev
   console.log(err);
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
