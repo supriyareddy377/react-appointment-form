@@ -6,8 +6,8 @@ import ThankYou from "./Pages/ThankYou";
 
 function App() {
   return (
-    // <BrowserRouter basename="/react-websites/appointment-form/">
-      <BrowserRouter>
+     <BrowserRouter basename="/react-websites/appointment-form/">
+     
       <Routes>
         <Route path="/" element={<AppointmentForm />} />
         <Route path="/thank-you" element={<ThankYou />} />

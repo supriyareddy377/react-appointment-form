@@ -22,27 +22,21 @@ router.post("/appointment", async (req, res) => {
 
     await newAppointment.save();
 
-    console.log("Saved to MongoDB");
+// ✅ Send response immediately
+res.json({
+  success: true,
+  message: "Appointment saved successfully"
+});
 
-    // Send Email
-    await sendEmail(name, phone, email, message);
+// 🚀 Run Email in background
+sendEmail(name, phone, email, message)
+  .then(() => console.log("Email sent"))
+  .catch(err => console.log("Email error:", err));
 
-    console.log("Email sent");
-
-    // Send SMS
-    
-   console.log("Calling SMS Function");
-
-await sendSMS(name, phone, email, message);
-
-console.log("SMS Function Finished");
-
-    console.log("SMS sent");
-
-    res.json({
-      success: true,
-      message: "Appointment saved successfully"
-    });
+// 🚀 Run SMS in background
+sendSMS(name, phone, email, message)
+  .then(() => console.log("SMS sent"))
+  .catch(err => console.log("SMS error:", err));
 
   } catch (error) {
 

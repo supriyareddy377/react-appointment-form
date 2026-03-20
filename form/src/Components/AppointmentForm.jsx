@@ -66,8 +66,8 @@ setLoading(true);
 try{
 
 const response = await axios.post(
-"http://localhost:5000/api/appointment",
-formData
+  "https://mern-backend-uqra.onrender.com/api/appointment",
+  formData
 );
 
 if(response.data.success){
