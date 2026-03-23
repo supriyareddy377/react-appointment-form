@@ -21,7 +21,7 @@ Mokashi Software Solutions`;
 
     const url = `http://sms.proware.in/api/sendhttp.php?authkey=141775A5Wcg6Mi616e5624P1&mobiles=${ownerNumber}&message=${encodedMsg}&sender=MEDTWT&route=4&country=91&DLT_TE_ID=1207161613778630888`;
 
-    console.log("SMS URL:", url);
+    console.log("SMS sent successfully");
 
     const response = await axios.get(url);
 
